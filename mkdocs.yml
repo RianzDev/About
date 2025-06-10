@@ -1,0 +1,60 @@
+site_name: Rian Ferreira
+site_author: Rian Ferreira
+site_description: Rian Ferreira's Page
+#site_url: https://RianzDev.github.io/
+site_dir: docs
+docs_dir: src
+site_url: ""                    # for offline use
+use_directory_urls: false       # also for offline use
+theme:
+    font: false                 # no external fonts
+    name: material
+    # squidfunk.github.io/mkdocs-material/setup/changing-the-colors/
+    palette:
+        primary: white
+        accent: white
+    features:
+        - header.autohide
+        - navigation.tracking   # address show active anchor
+plugins:
+    - search
+    - offline
+    - blog:
+        post_readtime: false
+extra:
+    generator: false
+extra_css:
+    - assets/extra.css
+    - assets/katex/katex.min.css
+extra_javascript:
+    - assets/katex.js
+    - assets/katex/katex.min.js
+    - assets/katex/contrib/auto-render.min.js
+markdown_extensions:
+    - tables
+    - pymdownx.arithmatex:
+        generic: true           # katex
+    - pymdownx.snippets:        # mkdocs-macros-plugin
+        check_paths: true
+        base_path: src/include
+not_in_nav: |
+    assets/
+    include/
+    books/
+    courses.md
+    pub-all.md
+    pub-courses.md
+    teach-gallery.md
+    teach-project.md
+nav:
+    - index.md
+    - research.md
+    - teaching.md
+    - Engineering: engineering.md
+    - notes.md
+    - Blog:
+      - blog/index.md
+exclude_docs: |
+    .*
+    *§*
+    *#*
